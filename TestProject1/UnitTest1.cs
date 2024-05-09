@@ -36,5 +36,13 @@ namespace TestProject1
             float expectedValue = result;
             Assert.AreEqual(result, functionResult, $"Il risultato deve essere {expectedValue}");
         }
+
+        [Test]
+        [TestCase(4.04f, 0.0f)]
+        public void TestDivideByZero(float a, float b)
+        {
+            Assert.Throws<ArgumentException>(() => Calculator.Divide(a, b),
+                "Deve sollevare IllegalArgumentException per divisione per zero");
+        }
     }
 }

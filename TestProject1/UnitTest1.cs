@@ -18,5 +18,14 @@ namespace TestProject1
             float expectedValue = result;
             Assert.AreEqual(result, functionResult, $"La somma deve essere {expectedValue}");
         }
+
+        [Test]
+        [TestCase(4.04f, 2.02f, 2.02f)]
+        public void TestSubtract(float a, float b, float result)
+        {
+            float functionResult = Calculator.Subtract(a, b);
+            float expectedValue = result;
+            Assert.AreEqual(result, functionResult, $"Il risultato deve essere {expectedValue}");
+        }
     }
 }

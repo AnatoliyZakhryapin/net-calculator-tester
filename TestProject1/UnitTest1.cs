@@ -27,5 +27,14 @@ namespace TestProject1
             float expectedValue = result;
             Assert.AreEqual(result, functionResult, $"Il risultato deve essere {expectedValue}");
         }
+
+        [Test]
+        [TestCase(4.04f, 2.02f, 2.00f)]
+        public void TestDivide(float a, float b, float result)
+        {
+            float functionResult = Calculator.Divide(a, b);
+            float expectedValue = result;
+            Assert.AreEqual(result, functionResult, $"Il risultato deve essere {expectedValue}");
+        }
     }
 }

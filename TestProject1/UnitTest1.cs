@@ -44,5 +44,14 @@ namespace TestProject1
             Assert.Throws<ArgumentException>(() => Calculator.Divide(a, b),
                 "Deve sollevare IllegalArgumentException per divisione per zero");
         }
+
+        [Test]
+        [TestCase(5.00f, 2.00f, 10.00f)]
+        public void TestMultiply(float a, float b, float result)
+        {
+            float functionResult = Calculator.Multiply(a, b);
+            float expectedValue = result;
+            Assert.AreEqual(result, functionResult, $"Il risultato deve essere {expectedValue}");
+        }
     }
 }

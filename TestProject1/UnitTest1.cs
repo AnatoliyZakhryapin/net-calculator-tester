@@ -1,6 +1,9 @@
+using net_calculator_tester;
+using Newtonsoft.Json.Linq;
+
 namespace TestProject1
 {
-    public class Tests
+    public class ClaculatorTests
     {
         [SetUp]
         public void Setup()
@@ -8,9 +11,12 @@ namespace TestProject1
         }
 
         [Test]
-        public void Test1()
+        [TestCase(2.02f, 2.02f, 4.04f)]
+        public void TestAdd(float a, float b, float result)
         {
-            Assert.Pass();
+            float functionResult = Calculator.Add(a, b);
+            float expectedValue = result;
+            Assert.AreEqual(result, functionResult, $"La somma deve essere {expectedValue}");
         }
     }
 }
